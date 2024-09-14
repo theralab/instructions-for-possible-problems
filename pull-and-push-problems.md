@@ -1,27 +1,21 @@
 # Como fazer commit em redes privadas!
 
 ## Primeiro passo
-Abra seu terminal (de preferencia o bash) e ponha o comando
+Abra seu terminal e ponha o comando
 
-Para *Linux*
-```bash
-ssh-keygen -m PEM -t rsa -P "" -f ~/.ssh/github_key
-```
+Para **Linux**
+`ssh-keygen -m PEM -t rsa -P "" -f ~/.ssh/github_key`
 
-Para *Windows*
-```shell
-ssh-keygen -m PEM -t rsa -P "" -f %USERPROFILE%\.ssh\github_key
-```
+Para **Windows**  ( **PRECISA** ser no cmd)
+`ssh-keygen -m PEM -t rsa -P "" -f %USERPROFILE%\.ssh\github_key`
+
 ## Segundo passo
-Ainda no terminal no diretório /.ssh execute o comando
-```
-touch config
-```
+Caso você use Windows, entre no Git Bash e execute. Se você usar Linux, é só seguir normalmente no terminal
+
+`touch config`
 
 E em seguida
-```
-vim config
-```
+`vim config`
 
 Cole o seguinte comando
 ```
@@ -31,11 +25,13 @@ Host github.com
     IdentityFile ~/.ssh/github_Key
     IdentitiesOnly yes
 ```
-
 ## Terceiro Passo
-Após esses passos execute o comando 
-```
-cat github_key.pub
-```
+Após esses passos execute os comandos
+`ssh -T git@github.com`
+Se der tudo certo você vai ver uma mensgem
+`Hi [username]! You've successfully authenticated, but GitHub does not provide shell access.`
+ 
+ E Logo em seguida
+`cat github_key.pub`
 
-E adicione ao github e tchanam!  Agora você pode fazer seus commits em uma rede que bloqueia as portas do github.
+Copie o texto que aparecer e adicione ao github e tchanam!  Agora você pode fazer seus commits em uma rede que bloqueia as portas do github.
