@@ -28,6 +28,7 @@ Host github.com
 ## Terceiro Passo
 Após esses passos execute os comandos
 `ssh -T git@github.com`
+
 Se der tudo certo você vai ver uma mensgem
 `Hi [username]! You've successfully authenticated, but GitHub does not provide shell access.`
  
