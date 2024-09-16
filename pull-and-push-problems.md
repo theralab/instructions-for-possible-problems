@@ -33,6 +33,10 @@ Host github.com
     IdentityFile ~/.ssh/github_key
     IdentitiesOnly yes
 ```
+E logo depois
+```
+chmod 600 ~/.ssh/github_key
+```
 ## Terceiro Passo
 Após esses passos execute os comandos
 ```
