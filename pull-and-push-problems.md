@@ -30,7 +30,7 @@ Cole o seguinte comando
 Host github.com
     HostName github.com
     User git
-    IdentityFile ~/.ssh/github_Key
+    IdentityFile ~/.ssh/github_key
     IdentitiesOnly yes
 ```
 ## Terceiro Passo
