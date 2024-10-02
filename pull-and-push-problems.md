@@ -1,56 +1,47 @@
 # Como fazer commit em redes privadas!
 
-## Primeiro passo
-Abra seu terminal e ponha o comando
-
-Para **Linux**
+## 1º Passo
+Instale e execute o Git Bash e digite:
 ```
 ssh-keygen -m PEM -t rsa -P "" -f ~/.ssh/github_key
 ```
 
-Para **Windows**  ( **PRECISA** ser no cmd)
-```
-ssh-keygen -m PEM -t rsa -P "" -f %USERPROFILE%\.ssh\github_key
-```
-
-## Segundo passo
-Caso você use Windows, entre no Git Bash e execute. Se você usar Linux, é só seguir normalmente no terminal
-
+## 2º passo
+Digite esse comando para criar um arquivo de configuração:
 ```
 touch config
 ```
 
-E em seguida
+E em seguida esse comando para acessar o arquivo criado:
 ```
 vim config
 ```
 
-Cole o seguinte comando
+Aperte a tecla I e cole o seguinte comando com `Ctrl+Shift+Ins`
 ```
 Host github.com
-    HostName github.com
+    HostName ssh.github.com
     User git
+    PreferredAuthentications publickey
     IdentityFile ~/.ssh/github_key
     IdentitiesOnly yes
+    Port 443
 ```
-E logo depois
+Para sair aperte ESC e digite `:wq`
+
+## 3º Passo
+Agora, ainda no Git Bash digite:
 ```
-chmod 600 ~/.ssh/github_key
+cat github_key.pub
 ```
-## Terceiro Passo
-Após esses passos execute os comandos
+Copie o texto que aparecer e adicione ao Github.
+## 4º Passo
+Voltando ao terminal, copie e cole o seguinte comando:
 ```
 ssh -T git@github.com
 ```
-
 Se der tudo certo você vai ver uma mensgem
 ```
 Hi [username]! You've successfully authenticated, but GitHub does not provide shell access.
 ```
- 
- E Logo em seguida
-```
-cat github_key.pub
-```
-
-Copie o texto que aparecer e adicione ao github e tchanam!  Agora você pode fazer seus commits em uma rede que bloqueia as portas do github.
+Agora você pode usar o Github! (Até a UEMA descobrir e barrar também)
