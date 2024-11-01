@@ -7,6 +7,10 @@ ssh-keygen -m PEM -t rsa -P "" -f ~/.ssh/github_key
 ```
 
 ## 2º passo
+Acesse o diretório do ssh usando:
+```
+cd ~/.ssh
+```
 Digite esse comando para criar um arquivo de configuração:
 ```
 touch config
@@ -30,7 +34,7 @@ Host github.com
 Para sair aperte ESC e digite `:wq`
 
 ## 3º Passo
-Agora, ainda no Git Bash digite:
+Agora, ainda no diretório ~/.ssh digite:
 ```
 cat github_key.pub
 ```
